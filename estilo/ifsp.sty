@@ -1,0 +1,119 @@
+% ---
+% Pacotes utilizados 
+% ---
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage{float}
+\usepackage{graphicx,xcolor}
+%\usepackage[pdftex]{graphicx}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{lipsum}       % para geração de dummy text - 
+\usepackage[alf,abnt-etal-list=0,abnt-etal-cite=3,abnt-emphasize=bf,bibjustif]{abntex2cite}
+\usepackage{indentfirst}
+\setlength{\parindent}{1.5cm}
+\usepackage{titlesec}
+\usepackage{url}
+\setlength{\mathindent}{1.5cm}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{listings} % para código fonte
+\usepackage{cleveref}
+\usepackage{hyphenat}
+\usepackage{pdflscape}
+\usepackage{tocloft}
+\usepackage{titletoc}
+\usepackage{caption}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\pagestyle{fancyplain}
+%\fancyhf{}
+%\lhead{}
+%\rhead{\thepage}
+%\rfoot{}
+
+%----------------------------------------------------------------------------- 
+% Tamanhos de Fontes
+%-----------------------------------------------------------------------------
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTEXsubsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+%\renewcommand{\tocheadstart}{\normalfont}
+
+\newenvironment{cit}
+ {\vspace{0.5cm}\SingleSpacing\small\hfill\begin{minipage}[c]{12cm}}
+ {\vspace{0.5cm}\end{minipage}\OnehalfSpacing\normalsize}
+
+%----------------------------------------------------------------------------
+% Ajustar os destaques tipográficos do sumário
+%----------------------------------------------------------------------------
+\setlength{\cftbeforeparagraphskip}{0pt} 
+\setlength{\cftbeforesubsectionskip}{0pt} 
+\setlength{\cftbeforesectionskip}{0pt} 
+\setlength{\cftbeforesubsubsectionskip}{0pt} 
+\setlength{\cftbeforechapterskip}{\onelineskip} 
+ 
+% Secao Primaria (Chapter): Caixa alta, Negrito, tamanho 12 
+\makeatletter 
+
+\settocpreprocessor{chapter}{% 
+  \let\tempf@rtoc\f@rtoc% 
+  \def\f@rtoc{% 
+  \texorpdfstring{\bfseries\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}% 
+} 
+
+% Secao Secundária (section): Caixa alta,  tamanho 12 
+\renewcommand*{\cftsectionfont}{\normalfont}
+
+% Secao Terciária (subsection): Negrito,  tamanho 12 
+\renewcommand*{\cftsubsectionfont}{\bfseries}
+
+% Secao Quaternária (subsubsection): Negrito,  tamanho 12 
+\renewcommand*{\cftsubsubsectionfont}{\bfseries}
+
+\renewcommand*{\cftparagraphfont}{\normalfont\itshape}
+
+%% Tornar Referencias em REFERÊNCIAS
+\addto\captionsbrazil{
+    \renewcommand{\bibname}{REFER\^ENCIAS}
+} 
+
+%----------------------------------------------------------------------------
+% Espaçamentos entre linhas e parágrafos 
+%----------------------------------------------------------------------------
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.5cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{2 mm}  
+
+% Controle do espaçamento entre a legenda e a fonte (e nota) de figuras e tabelas}:
+\setlength{\abovecaptionskip}{0 mm}
+\setlength{\belowcaptionskip}{1 mm}
+
+% Configuração de seções e capítulo no sumário
+\dottedcontents{section}[5em]{\bfseries}{5em}{0.8em}
+\dottedcontents{subsection}[5em]{\bfseries}{5em}{0.8em}
+\dottedcontents{subsubsection}[5em]{\normalfont}{5em}{0.8em}
+
+% Configuração de seção e capítulos no texto
+\titleformat{\section}
+   {\normalfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+   {\normalfont\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+   {\normalfont}{\thesubsubsection}{0.5em}{}
+\titleformat{\paragraph}
+   {\normalfont}{\paragraph}{0.5em}{}

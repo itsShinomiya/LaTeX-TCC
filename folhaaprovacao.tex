@@ -1,0 +1,33 @@
+%\newcommand{\imprimirfolhaaprovacao}{
+\begin{folhadeaprovacao}
+\begin{center}
+\textsc{\imprimirautor}\\
+\textsc{\coautor}\\
+\textsc{\tercautor}
+\vspace*{\fill}\vspace*{\fill}
+\begin{center}
+\ABNTEXchapterfont\bfseries\large\MakeUppercase\imprimirtitulo
+\\{subtitulo}
+\end{center}
+\vspace*{\fill}
+\hspace{.45\textwidth}
+\begin{minipage}{.5\textwidth}
+\nohyphens{\imprimirpreambulo}\\[0.5cm]
+{\imprimirorientadorRotulo~\nohyphens{\imprimirorientador}\par}
+{\imprimircoorientadorRotulo~\nohyphens{\imprimircoorientador}\par} %Caso não possua coorientador, comentar esta linha
+\end{minipage}%
+\vspace*{0.5cm}
+\end{center}
+\textbf{Banca examinadora}
+\begin{flushleft}
+\assinatura*{\begin{flushleft}Membro 1, titulação e instituição\end{flushleft}}\\
+\assinatura*{\begin{flushleft}Membro 2, titulação e instituição\end{flushleft}}\\
+\assinatura*{\begin{flushleft}Membro 3, titulação e instituição\end{flushleft}}
+\end{flushleft}
+\begin{flushright}
+\vspace*{0.5cm}
+Birigui, \underline{\hspace{1cm}} de \underline{\hspace{3cm}} de \underline{\hspace{2cm}} .
+\vspace*{1cm}
+\end{flushright}
+\end{folhadeaprovacao}
+%}
