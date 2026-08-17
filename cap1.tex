@@ -1,15 +1,25 @@
 \chapter{INTRODUÇÃO}
 
+A avaliação de risco de crédito é um dos pilares fundamentais do setor bancário, determinando a viabilidade de concessão de empréstimos e mitigando possíveis inadimplências \cite{khandani2010consumer}. Com o avanço das tecnologias de Inteligência Artificial (IA), especificamente os Grandes Modelos de Linguagem (LLMs) e o Processamento de Linguagem Natural (NLP), surgem novas oportunidades para automatizar e aprimorar processos de análise complexos \cite{araci2019finbert}.
 
+No entanto, instituições financeiras enfrentam grandes desafios ao adotar IA baseada em nuvem devido a regulações rigorosas de privacidade de dados, como a Lei Geral de Proteção de Dados (LGPD) no Brasil e a \textit{General Data Protection Regulation} (GDPR) na Europa. O envio de dados financeiros sensíveis para APIs proprietárias externas compromete o sigilo bancário.
 
-\section{Subtítulo 2} %Cria uma nova seção no texto. Insira o título da seção entre {}
+Neste contexto, apresenta-se o projeto CreditMaster, um microsserviço de Inteligência Artificial Generativa (\textit{headless}) projetado especificamente para o setor bancário. Seu principal objetivo é automatizar o fluxo de análise de risco e gerar pareceres técnicos de crédito de forma automática, operando de maneira 100\% \textit{on-premise} (local).
 
+\section{Objetivos}
 
+O objetivo principal deste trabalho é descrever o desenvolvimento e a implementação do CreditMaster como uma ferramenta segura e eficiente de apoio à decisão no processo de análise de crédito.
 
-\subsection{Subtítulo 3} %Cria uma subseção no texto. Insira o título da seção entre {}
+Os objetivos específicos incluem:
+\begin{itemize}
+    \item Desenvolver uma arquitetura baseada em LLMs capaz de rodar localmente, garantindo o sigilo bancário e a conformidade com as leis de proteção de dados.
+    \item Implementar técnicas de \textit{Fine-Tuning} para internalizar o jargão técnico bancário e padronizar o formato dos pareceres de crédito.
+    \item Integrar a técnica de \textit{Retrieval-Augmented Generation} (RAG) para consulta de manuais de crédito e normativas em tempo real, reduzindo alucinações matemáticas e regulatórias.
+    \item \textbf{[ANOTAÇÃO: Lembrar de colocar aqui outros objetivos específicos sobre como validei o modelo e as métricas de desempenho que usei.]}
+\end{itemize}
 
+\section{Justificativa}
 
+Sob a perspectiva de negócios, a automação da análise de crédito representa um imenso potencial de redução de custos operacionais e agilidade na liberação de limites para os clientes. Processos tradicionais dependem de longas revisões humanas em bases de dados e manuais extensos. A utilização de Inteligência Artificial para gerar o parecer técnico primário libera os analistas humanos para atuarem apenas na aprovação final e no tratamento de exceções, conferindo alta escalabilidade às instituições financeiras.
 
-\subsubsection{Subtítulo 4} %Cria uma subseção de terceiro nível. Insira o título da seção entre {}
-
-
+Sob a ótica tecnológica, até recentemente, a implementação de IA generativa no ambiente corporativo estava restrita a serviços de nuvem controlados por \textit{Big Techs}, gerando impasses jurídicos de privacidade e compliance (como a LGPD e regulamentações do BACEN). A maturação de Modelos de Linguagem de código aberto e tamanho otimizado (como o Llama 3.1 com 8 bilhões de parâmetros), combinada a técnicas de quantização (QLoRA), tornou viável rodar inferências sofisticadas localmente em hardwares de baixo custo (e.g., placas de vídeo de consumo geral como a RTX 5060 Ti). Portanto, o desenvolvimento deste trabalho justifica-se por demonstrar a plena factibilidade técnica e econômica de aplicar IA de ponta respeitando restrições rígidas de sigilo bancário.

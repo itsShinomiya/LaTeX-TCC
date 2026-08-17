@@ -1,6 +1,19 @@
-\chapter{Cronograma de execução}
+\chapter{RESULTADOS E DISCUSSÕES}
 
+\textbf{[ANOTAÇÃO: Aqui eu preciso caprichar e focar na eficiência do sistema usando os dados dos testes que rodei localmente.]}
 
+Nesta seção serão apresentados os resultados das simulações, bem como a avaliação qualitativa e quantitativa da geração automatizada de pareceres pelo CreditMaster.
 
+\section{Desempenho Computacional e Treinamento}
 
+O processo de treinamento e ajuste fino (\textit{Fine-Tuning}) do modelo foi conduzido integralmente em ambiente local. A infraestrutura de \textit{hardware} utilizada consistiu em uma máquina equipada com processador AMD Ryzen 5 7600X, 16 GB de memória RAM, armazenamento em SSD NVMe e uma placa de vídeo NVIDIA RTX 5060 Ti com 8 GB de VRAM. O sistema operacional base para a experimentação foi o Linux Mint.
 
+Durante o treinamento utilizando a biblioteca Unsloth e a técnica QLoRA, observou-se uma alocação extrema da VRAM da placa de vídeo, que operou em sua capacidade máxima. Em contrapartida, o uso da memória RAM convencional do sistema manteve-se no nível mínimo, evidenciando a eficiência da arquitetura em otimizar os recursos focando primariamente no subsistema de vídeo, sem estrangular os recursos gerais da máquina.
+
+\textbf{[ANOTAÇÃO: Tenho que colocar o tempo exato que o fine-tuning levou na minha máquina. Não esquecer de colar os gráficos de Loss (Training e Validation) do TensorBoard/WandB pra mostrar a curva de aprendizado.]}
+
+\section{Qualidade das Respostas e Redução de Alucinações}
+\textbf{[ANOTAÇÃO: Explicar como a qualidade do texto melhorou. Mostrar como o modelo puro respondia antes e como ficou depois. Falar também como o RAG salvou o sistema de aprovar crédito fora da minha \texttt{credit\_policy\_pt.md}.]}
+
+\section{Exemplo Prático de Parecer de Crédito}
+\textbf{[ANOTAÇÃO: Colar aqui um exemplo real de JSON de entrada de um cliente e mostrar o parecer exato (Aprovado/Reprovado) que a API do FastAPI gerou no final.]}

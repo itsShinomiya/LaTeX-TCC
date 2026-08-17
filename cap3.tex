@@ -1,15 +1,41 @@
-\chapter{Metodologia}
+\chapter{METODOLOGIA E DESENVOLVIMENTO}
 
+O CreditMaster foi concebido sob uma arquitetura híbrida focada em segurança, eficiência e precisão para o setor financeiro. O diferencial técnico reside no fato de o microsserviço operar de maneira autônoma e 100\% local (\textit{on-premise}), assegurando a proteção de dados sigilosos e o cumprimento de marcos legais como LGPD e GDPR, mitigando a dependência de APIs em nuvem.
 
+\section{Arquitetura Híbrida do Sistema}
+O núcleo de tomada de decisão do sistema opera através da composição sinérgica de duas técnicas de IA generativa:
 
-\section{Subtítulo 2} %Cria uma nova seção no texto. Insira o título da seção entre {}
+\subsection{Ajuste Fino (QLoRA) com Llama 3.1 8B}
+O modelo base selecionado foi o \textbf{Llama 3.1 8B Instruct}. A modificação estrutural de seus parâmetros foi viabilizada pela utilização da biblioteca \textbf{Unsloth}, e o modelo final foi exportado no formato \textbf{GGUF} para execução local otimizada. 
+Esta etapa atingiu os seguintes propósitos:
+\begin{itemize}
+    \item Internalização abrangente de jargões técnicos do meio bancário e financeiro.
+    \item Padronização rigorosa do formato sintático dos pareceres de análise de crédito.
+    \item Otimização extrema no uso de memória para permitir inferências ultrarrápidas em \textit{hardware} local, especificamente utilizando o ecossistema CUDA Toolkit em GPUs NVIDIA (como a RTX 5060 Ti).
+\end{itemize}
 
+\subsection{Motor RAG (\textit{Retrieval-Augmented Generation})}
+Para mitigar as limitações de raciocínio lógico-matemático dos LLMs e suprimir as alucinações, foi implementado um \textit{pipeline} de injeção de contexto empregando ferramentas modernas como \textbf{LangChain} e manipulação de dados via \textbf{Pandas}.
+O sistema é apoiado por um banco de dados vetorial (\textbf{ChromaDB} ou \textbf{FAISS}), que atua em tempo real executando:
+\begin{itemize}
+    \item Injeção dinâmica de fatos e diretrizes regulatórias no exato momento da avaliação de risco.
+    \item Consultas semânticas estruturadas focadas na Política de Crédito do Banco e normativas vigentes.
+    \item Geração de pareceres lastreados (\textit{bulletproof traceability}), onde cada argumento na aprovação ou rejeição do crédito aponta para uma regra específica da política adotada.
+\end{itemize}
 
+\section{Construção do Conjunto de Dados (\textit{Dataset})}
+A qualidade do modelo \textit{fine-tuned} depende diretamente da curadoria dos dados. O repositório do CreditMaster estrutura-se sobre dados proprietários contendo:
+\begin{itemize}
+    \item \textbf{Políticas de Crédito:} Documentos que definem diretrizes de concessão e risco de mercado (\texttt{credit\_policy\_pt.md}).
+    \item \textbf{Histórico de Pareceres:} Uma base sintética contendo milhares de exemplos rotulados (\texttt{pareceres\_credito\_2000.jsonl}), construída através de metodologias automatizadas de roteirização (\texttt{gerar\_pareceres.py}).
+\end{itemize}
+\textbf{[ANOTAÇÃO: Preciso detalhar de onde tirei os dados financeiros dos clientes (renda, score) e explicar certinho como formatei aquele arquivo JSONL no padrão prompt/completion do Llama.]}
 
-\subsection{Subtítulo 3} %Cria uma subseção no texto. Insira o título da seção entre {}
-
-
-
-\subsubsection{Subtítulo 4} %Cria uma subseção de terceiro nível. Insira o título da seção entre {}
-
-
+\section{Visão Geral das Tecnologias Aplicadas}
+Para suportar o rigor da arquitetura, o \textit{Tech Stack} consolidou as seguintes soluções:
+\begin{itemize}
+    \item \textbf{Camada de IA e Modelagem:} Python 3.10+, Llama 3.1 8B, Unsloth, QLoRA e exportação GGUF.
+    \item \textbf{Motor de Inferência:} Ambiente Linux Mint suportando Ollama e CUDA Toolkit.
+    \item \textbf{Pipeline de Dados:} ChromaDB, FAISS, LangChain e Pandas.
+    \item \textbf{Interface de Acesso e Serviços:} API REST via FastAPI / Flask, e interações via Python CLI.
+\end{itemize}
