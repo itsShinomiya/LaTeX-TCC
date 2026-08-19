@@ -15,16 +15,16 @@
 \contentsline {section}{\numberline {3.1}Arquitetura Híbrida do Sistema}{9}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Ajuste Fino (QLoRA) com Llama 3.1 8B}{9}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Motor RAG (\textit {Retrieval-Augmented Generation})}{9}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Construção do Conjunto de Dados (\textit {Dataset})}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Construção do Conjunto de Dados (\textit {Dataset})}{9}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Visão Geral das Tecnologias Aplicadas}{10}{section.3.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {4}\bfseries \MakeTextUppercase []{RESULTADOS E DISCUSSÕES}}{11}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Desempenho Computacional e Treinamento}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Qualidade das Respostas e Redução de Alucinações}{11}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Exemplo Prático de Parecer de Crédito}{11}{section.4.3}%
+\contentsline {section}{\numberline {4.1}Ambiente Computacional e Eficiência de Recursos}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Dinâmica de Treinamento e Convergência da Perda}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Evolução do Agendamento da Taxa de Aprendizado}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Avaliação Qualitativa dos Pareceres e Supressão de Alucinações via RAG}{15}{section.4.4}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\bfseries \MakeTextUppercase []{CONCLUSÃO}}{12}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Trabalhos Futuros}{12}{section.5.1}%
+\contentsline {chapter}{\chapternumberline {5}\bfseries \MakeTextUppercase []{CONCLUSÃO}}{16}{chapter.5}%
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{\MakeTextUppercase []{REFER\^ENCIAS}}{13}{section*.8}%
+\contentsline {chapter}{\MakeTextUppercase []{REFER\^ENCIAS}}{17}{section*.12}%
 \contentsfinish 
